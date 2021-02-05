@@ -154,6 +154,7 @@ footer > nav#menu-adicional > ul > li{
     padding:.5rem 0;
     flex:1;
     border-bottom:solid lightgrey;
+    background-color:lightskyblue;
 }
 
 footer > nav#menu-adicional > ul > li > a{
