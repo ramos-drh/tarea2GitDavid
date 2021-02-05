@@ -1,0 +1,178 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    flex-flow:column;
+    /*width:100%; POR QUÉ WIDTH:100% O 100vw PRODUCEN SCROLL HORIZONTAL ??????  */
+}
+
+header{
+    display:flex;
+    flex-flow:row;
+    justify-content: space-around;
+    align-items:center;
+}
+
+/*Indicamos un factor de crecimiento mayor al nav de la bolsa*/
+header > nav{
+    flex:1 0 1rem;
+}
+
+header > nav:nth-child(4), header > picture{
+    flex:2 0 1rem;
+}
+
+/*Ocultamos ul y el input de hamburger*/
+header > nav#menu-principal > ul#menu, header > nav#menu-principal > input#menu-hamburger{
+    display:none;
+}
+
+/*Si se pulsa input => mostramos menú*/
+header > nav#menu-principal > input#menu-hamburger:checked + ul#menu{
+    display:block;
+    position: absolute;
+    left:0;
+    top:2rem;
+    font-size:2rem;
+    background-color: white;
+    padding:1rem;
+}
+
+/*Quitamos estilos a todas las listas de la cabecera (todas son hijas directos de un nav)*/
+header > nav >ul{
+    list-style-type: none;
+}
+
+/*Quitamos subrayado lis de la ul del menú hamburguesa*/
+header > nav#menu-principal > ul#menu > li > a{
+    text-decoration: none;
+}
+
+/*Coloreamos los iconos de la cabecera*/
+header > nav > ul > li > a,
+header > nav > label > span{
+    color: grey;
+}
+
+/*Ordenamos los items flex. de la cabecera*/
+header > nav#menu-principal{
+    order:1;
+    padding-left:1rem;
+}
+
+header > nav#buscador{
+    order:2;
+}
+
+header > nav#buscador > ul{
+    display:flex;
+}
+
+/*Centramos con margin (para ello debe ser un elemento de bloque)*/
+header > picture{
+    order:3;
+    text-align: center;
+}
+
+header > picture > img{
+    width:50%;
+}
+
+/*Las ul de los iconos (bolsa y buscador generan un margin que no nos interesa*/
+header > nav#buscador > ul, header > nav#compra > ul, header > nav#menu-principal > ul{
+    margin:0;
+}
+
+/*
+header > span#relleno-cabecera{
+    order:4;
+}
+*/
+header > nav#compra{
+    order:4;
+}
+
+/*Colocamos el icono de la bolsa a la derecha*/
+header > nav#compra > ul{
+    padding:0;
+    padding-right:1rem;
+    text-align: right;
+}
+
+
+main{
+    display:flex;
+    flex-flow:row wrap;
+    width:100%;
+}
+
+main > article.item{
+    width:50%;    
+    display:flex;
+    flex-flow:column;
+    align-items: center;
+}
+
+/*Ordenamos los items de los articulos*/
+main > article.item > p + a{
+    order:-1;
+}
+
+main > article.item > p + a > picture{
+    margin:0 auto;
+}
+
+/*Tamaño de las imágenes a ojo . Otra forma mejor   ????    */
+main > article.item > p + a > picture > img{
+    margin:0 auto;
+    width: 48vw;
+    height:100%;
+}
+
+footer{
+    display:flex;
+    flex-flow: column;
+}
+
+/*
+footer > nav#menu-adicional{
+    
+}
+*/
+
+footer > nav#menu-adicional > ul{
+    list-style: none;
+    display:flex;
+    flex-flow:column;
+    
+    padding-left:0;
+}
+
+footer > nav#menu-adicional > ul > li{
+    padding:.5rem 0;
+    flex:1;
+    border-bottom:solid lightgrey;
+}
+
+footer > nav#menu-adicional > ul > li > a{
+    text-decoration: none;
+    padding:.5rem 0;
+    color:initial;
+}
+
+footer > nav#iconos-sociales > ul{
+    list-style: none;
+    display:flex;
+    flex-flow:row;
+    justify-content: center;
+}
+
+footer > nav#iconos-sociales > ul > li{
+    margin: 0 .5rem;
+}
+
+footer > nav#iconos-sociales > ul > li > a{
+    color:grey;
+}
