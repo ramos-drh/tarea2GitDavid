@@ -13,6 +13,7 @@ header{
     flex-flow:row;
     justify-content: space-around;
     align-items:center;
+    background-color:orange;    /*(Sustituto del método toString()) CAMBIAMOS EL FONDO DE LA CABECERA A NARANJA*/
 }
 
 /*Indicamos un factor de crecimiento mayor al nav de la bolsa*/
