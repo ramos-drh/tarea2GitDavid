@@ -165,7 +165,7 @@ footer > nav#menu-adicional > ul > li > a{
 footer > nav#iconos-sociales > ul{
     list-style: none;
     display:flex;
-    flex-flow:row;
+    flex-flow:column;
     justify-content: center;
 }
 
